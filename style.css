@@ -1,5 +1,4 @@
 /* Global Styles */
-
 * {
   margin: 0;
   padding: 0;
@@ -88,13 +87,11 @@ h1 {
 }
 
 /* Nav Sectoin*/
-
 .main-head {
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
   z-index: 1;
   position: -webkit-sticky;
   position: sticky;
-
   top: 0;
 }
 
@@ -148,7 +145,7 @@ nav {
 }
 
 .hero-images {
-  flex: 1 1 40rem;
+  flex: 5 1 40rem;
   background: linear-gradient(#dad8dd, #dad1d4);
   position: relative;
   z-index: -2;
@@ -171,15 +168,61 @@ nav {
   animation: plan-rotation 2s ease-in-out,
     plant-shake 2s ease-in-out alternate-reverse infinite 2s;
   transform-origin: bottom;
-  max-height: 80%;
+  min-height: 100%;
+  max-height: 100%;
 }
 
 .plant2 {
   left: 40%;
 }
+.burger,
+.menu-check {
+  display: none;
+}
+/*about section*/
+.about {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  position: relative;
+  flex: 1 1 40rem;
+}
+.about-image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.about-image h5 {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  letter-spacing: 2rem;
+}
+
+.about-text {
+  flex: 1 1 40rem;
+  justify-content: space-around;
+  background: var(--background-color);
+  color: white;
+}
+.about-text div {
+  padding: 3rem 8rem;
+}
+
+.about-text h2 {
+  font-family: vibes;
+  padding: 4rem;
+  font-size: 5rem;
+}
+.about-text h3 {
+  font-family: "Ruhl Medium";
+}
 
 /*animation*/
-
 @-webkit-keyframes opanning {
   from {
     opacity: 0;
@@ -218,10 +261,10 @@ nav {
 
 @-webkit-keyframes plant-shake {
   from {
-    transform: rotatez(10deg);
+    transform: rotate(10deg);
   }
   to {
-    transform: rotatez(0deg);
+    transform: rotate(0deg);
   }
 }
 
@@ -233,61 +276,60 @@ nav {
     transform: rotatez(0deg);
   }
 }
-.burger ,.menu-check{
-  display: none;
-}
 
 @media screen and (max-width: 858px) {
-  .hero{
+  .hero {
     width: 100%;
-    
-}
-.hero-introduction p{
-  padding: 5rem 3rem;
-}
-  /*burger thinks*/ 
+  }
+
+  .hero-introduction p {
+    padding: 5rem 3rem;
+  }
+  /*burger thinks*/
   .burger span {
     display: block;
     padding: 0.2rem 2rem;
     margin: 0.5rem 0rem;
     background-color: var(--background-color);
   }
-  .nav-links{
+  .nav-links {
     position: fixed;
     left: 0%;
     bottom: 100%;
     background-color: var(--background-color);
-  width: 100%;
-  height:100%;
-  
-  flex-direction: column;
-  align-items: center;
-  transition:transform ease-in-out 1s;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    transition: transform ease-in-out 1s;
   }
-  .nav-links a{
+  .nav-links a {
     font-size: var(--header3);
     color: white;
-    text-decoration:underline;
+    text-decoration: underline;
   }
-  .menu-check{
+  .menu-check {
     display: block;
     position: absolute;
     top: 14.1%;
     right: 4.3%;
-    height:5rem;
+    height: 5rem;
     width: 5rem;
     opacity: 0;
     cursor: pointer;
     z-index: 6;
   }
-  .menu-check:checked +.nav-links{
+  .menu-check:checked + .nav-links {
     transform: translatey(100%);
   }
-  .menu-check:checked ~ .burger span{
-   background-color: white;
+  .menu-check:checked ~ .burger span {
+    background-color: white;
   }
-  .burger{
+  .burger {
     position: relative;
     display: block;
+  }
+  .about-text div {
+    padding: 3rem 5rem;
   }
 }
